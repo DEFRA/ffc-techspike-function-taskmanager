@@ -1,0 +1,9 @@
+services:
+  ffc-techspike-function-taskmanager:
+    build: .
+    image: ffc-techspike-function-taskmanager
+    container_name: ffc-techspike-function-taskmanager
+    environment:
+      APPINSIGHTS_CLOUDROLE: ffc-techspike-function-taskmanager-local
+      FUNCTIONS_WORKER_RUNTIME: dotnet-isolated
+      AzureWebJobsStorage: UseDevelopmentStorage=true

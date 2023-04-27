@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ffc_techspike_function_taskmanger": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7297",
+      "launchBrowser": false
+    }
+  }
+}

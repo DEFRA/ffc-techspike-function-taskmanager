@@ -1,0 +1,9 @@
+# This override file should be used when running this service in isolation
+# to provide dependencies and expose ports for local testing
+
+services:
+  ffc-techspike-function-taskmanager:
+    image: ffc-techspike-function-taskmanager-development
+    container_name: ffc-techspike-function-taskmanager-development
+    ports:
+      - "3000:80"

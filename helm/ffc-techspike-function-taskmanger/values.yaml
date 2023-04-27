@@ -1,0 +1,66 @@
+environment: production
+environmentCode:
+name: ffc-techspike-function-taskmanger
+namespace: ffc-techspike
+workstream: ffc-techspike
+image: ffc-techspike-function-taskmanger
+
+labels: {}
+
+aadPodIdentity: true
+
+appInsights:
+  key:
+
+azureIdentity:
+  clientID:
+  resourceID:
+
+containerConfigMap:
+  name: ffc-techspike-function-taskmanger-config-map
+
+containerSecret:
+  name: ffc-techspike-function-taskmanger-secret
+  type: Opaque
+
+deployment:
+  cpuThreshold: 80
+  memoryThreshold: 80
+  minReadySeconds: 0
+  minReplicas: 1
+  maxReplicas: 1
+  priorityClassName: high
+  replicas: 1
+  restartPolicy: Always
+
+container:
+  requestMemory: 100Mi
+  requestCpu: 100m
+  limitMemory: 100Mi
+  limitCpu: 100m
+  port: 3000
+  azureWebJobsStorage:
+  functionsWorkerRuntime: dotnet-isolated
+
+service:
+  port: 80
+  type: ClusterIP
+
+ingress:
+  class: nginx
+  endpoint: ffc-techspike-authentication
+  server: example.com
+
+livenessProbe:
+  path: /healthz
+  port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  path: /healthy
+  port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3

@@ -1,0 +1,7 @@
+{{- include "ffc-helm-library.container-config-map" (list . "ffc-techspike-function-taskmanger.config-map") -}}
+{{- define "ffc-techspike-function-taskmanger.config-map" -}}
+data:
+  PORT: {{ quote .Values.container.port }}
+  APPINSIGHTS_CLOUDROLE: {{ quote .Values.name }}
+  FUNCTIONS_WORKER_RUNTIME: {{ quote .Values.functionsWorkerRuntime }}
+{{- end -}}
