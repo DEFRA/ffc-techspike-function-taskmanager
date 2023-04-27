@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "ffc-techspike-function-taskmanager.deployment") -}}
+{{- define "ffc-techspike-function-taskmanager.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "ffc-techspike-function-taskmanager.container") }}
+{{- end -}}

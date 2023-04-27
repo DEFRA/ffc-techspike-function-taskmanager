@@ -1,5 +1,5 @@
-{{- include "ffc-helm-library.container-config-map" (list . "ffc-techspike-function-taskmanger.config-map") -}}
-{{- define "ffc-techspike-function-taskmanger.config-map" -}}
+{{- include "ffc-helm-library.container-config-map" (list . "ffc-techspike-function-taskmanager.config-map") -}}
+{{- define "ffc-techspike-function-taskmanager.config-map" -}}
 data:
   PORT: {{ quote .Values.container.port }}
   APPINSIGHTS_CLOUDROLE: {{ quote .Values.name }}

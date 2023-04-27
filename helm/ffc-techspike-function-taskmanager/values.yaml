@@ -1,9 +1,9 @@
 environment: production
 environmentCode:
-name: ffc-techspike-function-taskmanger
+name: ffc-techspike-function-taskmanager
 namespace: ffc-techspike
 workstream: ffc-techspike
-image: ffc-techspike-function-taskmanger
+image: ffc-techspike-function-taskmanager
 
 labels: {}
 
@@ -17,10 +17,10 @@ azureIdentity:
   resourceID:
 
 containerConfigMap:
-  name: ffc-techspike-function-taskmanger-config-map
+  name: ffc-techspike-function-taskmanager-config-map
 
 containerSecret:
-  name: ffc-techspike-function-taskmanger-secret
+  name: ffc-techspike-function-taskmanager-secret
   type: Opaque
 
 deployment:

@@ -1,3 +1,0 @@
-{{- include "ffc-helm-library.cluster-ip-service" (list . "ffc-techspike-function-taskmanger.cluster-ip-service") -}}
-{{- define "ffc-techspike-function-taskmanger.cluster-ip-service" -}}
-{{- end -}}
