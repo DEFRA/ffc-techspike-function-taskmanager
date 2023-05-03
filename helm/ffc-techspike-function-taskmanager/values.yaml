@@ -29,15 +29,15 @@ deployment:
   minReadySeconds: 0
   minReplicas: 1
   maxReplicas: 1
-  priorityClassName: high
+  priorityClassName: default
   replicas: 1
   restartPolicy: Always
 
 container:
   requestMemory: 100Mi
   requestCpu: 100m
-  limitMemory: 100Mi
-  limitCpu: 100m
+  limitMemory: 120Mi
+  limitCpu: 120m
   port: 3000
   azureWebJobsStorage:
   functionsWorkerRuntime: dotnet-isolated
